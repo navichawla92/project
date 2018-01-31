@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        /* Get from elements values */
+var test=[];
+test.push({id:'1',name:'test'});
+test.push({id:'2',name:'test11'});
+test.push({id:'3',name:'test11'});
+test.push({id:'4',name:'test1'});
+
+var json = JSON.stringify(test ); 
+console.log(test);
+ $.ajax({
+        url: "mongo.php",
+        type: "post",
+        data: { testtt:json},
+        dataType: "json",
+        success: function (response) {
+           // you will get response from your php page (what you echo or print)                 
+
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
+        }
+
+
+    });
+
+       
+       
+    });
+});
+
+var orders= [{ id: 1, order: "11" }, { id: 2, order: "22" }, { id: 3, order: "33" }],
+    order = orders.find(o => o.order === "22"),
+    orderID = order ? order.id : 0;
+
+console.log(orderID);
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+<input type="file" accept="image/*;capture=camera">
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click me</button>
+
+</body>
+</html>

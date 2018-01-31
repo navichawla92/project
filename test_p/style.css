@@ -1,0 +1,129 @@
+/*Styles the background-color of an active link*/
+.menu ul .active{
+    color: #ffffff;
+    background: #red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red 20%, green); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red 20%, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red 20%, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red 20%, green); /* Standard syntax */
+    background: linear-gradient(red 20%, green); /* Standard syntax */
+}
+
+
+.navbar{
+    width:100%;
+    max-width:1000px;
+    text-align:center;
+    margin-top:-8px;
+    margin-bottom:60px;
+    margin-left:160px;
+}
+
+.menu ul{
+    /*Removes bullets*/
+    list-style:none;
+}
+
+/*Styles each list within ul*/
+.menu ul li{
+    background-color:green;
+    border:1px solid #ffffff;
+    width:100%;
+    max-width:173px;
+    height:35px;
+    line-height:35px;
+    margin:auto;
+    text-align:center;
+    /*Makes the list dispaly in a horizontal maneer*/
+    float:left;
+    position: relative;
+    border-radius:8px;
+    font: 15px;
+    font-weight:regular;
+}
+
+.menu ul li a{
+    text-decoration:none;
+    color:white;
+    display:block;
+}
+
+
+.menu ul li a:hover{
+    background-color:red;
+    border-radius:8px;
+}
+
+.menu ul ul{
+    position:absolute;
+    margin-left:-40px;
+    display:none;
+}
+
+.menu ul li:hover >ul{
+    display:block;
+}
+
+.menu ul ul ul{
+    width:100%;
+    margin-left:134px;
+    top:0px;
+}
+
+/*Display the drop-down on hover*/
+/*+ selecctor styles every element that are placed immediately after another element */
+.menu ul li a:hover + .menu ul li ul, .menu ul li ul:hover{
+    display:block;
+}
+
+/*Hide Checkbox*/
+input[type=checkbox]{
+    display:none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+/*We select checkbox and then use selector column checked to make sure that the checkbox is checked*/
+/*~ selects everything that is beneath element on the left shoul be styled with CSS style within the curly bracket*/
+input[type=checkbox]:checked ~ .list{
+    display:block;
+}
+
+/*Styles the menu-label according to its class*/
+.show-menu{
+    font-family:"Helvetica Neue", Helvetica, Arial,sans-serif;
+    text-decoration:none;
+    color:#fff;
+    background: #19c589;
+    text-align:center;
+    padding:10px 0;
+    display:none;
+}
+
+
+/*Responsive styles*/
+@media screen and (max-width:480px){
+    /*Make drop-down links appear inline*/
+    .menu ul{
+        position:static;
+        display: none;
+    }
+
+    /*Create vertical spacing*/
+    .menu ul li{
+        margin-bottom:1px;
+    }
+
+    /*Make all menu links full width*/
+    .menu ul li, .menu li a{
+        width:100%;
+    }
+
+    .show-menu{
+        display:block;
+    }
+    body{
+        background-image:none;
+    }
+
+
+}

@@ -1,0 +1,29 @@
+<html>
+<head>
+<script>
+var target;
+ var select;
+ var colors = ["brown", "cyan", "yellow", "red", "blue", "green", "black", "white", "purple", "pink"];
+ var finished = false;
+
+ function do_game() {
+   var random_color = Math.floor(Math.random() * colors.length);
+   target = colors[random_color];
+ }
+ while (!finished) {
+   select = prompt("I am thinking of one of these colors\n\n brown,cyan,yellow,red,blue,green,black,white,purple,pink\n what color am i thinking of");
+   finished = check_guess();
+ }
+
+ function check_guess() {
+   if (select == target) {
+     return true;
+   } else {
+     return false;
+   }
+
+ }
+</script>
+</head>
+
+</html>
